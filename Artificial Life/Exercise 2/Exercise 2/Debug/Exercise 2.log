@@ -1,3 +1,7 @@
 ﻿  Exercise2.cpp
-c:\users\raven\desktop\masters-projects\artificial life\exercise 2\exercise 2\exercise2.cpp(65): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 2\exercise 2\exercise2.cpp(24): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 2\exercise 2\exercise2.cpp(29): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 2\exercise 2\exercise2.cpp(44): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 2\exercise 2\exercise2.cpp(52): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 2\exercise 2\exercise2.cpp(157): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Exercise 2.vcxproj -> C:\Users\Raven\Desktop\Masters-Projects\Artificial Life\Exercise 2\Exercise 2\Debug\Exercise 2.exe
