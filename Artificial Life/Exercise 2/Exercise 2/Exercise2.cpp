@@ -7,6 +7,7 @@
 #include "time.h"
 #include <string>
 #include <bitset>
+#include <cmath>
 
 using namespace std;
 
