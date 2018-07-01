@@ -1,0 +1,4 @@
+﻿  Exercise5.cpp
+c:\users\raven\desktop\masters-projects\artificial life\exercise 5\exercise5.cpp(44): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 5\exercise5.cpp(88): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Exercise 5.vcxproj -> C:\Users\Raven\Desktop\Masters-Projects\Artificial Life\Exercise 5\Debug\Exercise 5.exe

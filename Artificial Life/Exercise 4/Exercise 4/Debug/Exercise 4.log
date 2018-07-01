@@ -1,2 +1,2 @@
 ﻿  Exercise 4.cpp
-  Exercise 4.vcxproj -> C:\Users\Raven\Desktop\Masters-Projects\Artificial Life\Exercise 4\Exercise 4\Debug\Exercise 4.exe
+c:\users\raven\desktop\masters-projects\artificial life\exercise 4\exercise 4\exercise 4.cpp(40): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?

@@ -1,0 +1,10 @@
+﻿  PSO.cpp
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(67): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(68): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(69): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(70): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(77): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(167): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\raven\desktop\masters-projects\artificial life\exercise 11\pso\pso\pso.cpp(179): warning C4305: 'argument': truncation from 'double' to 'float'
+  PSO.vcxproj -> C:\Users\Raven\Desktop\Masters-Projects\Artificial Life\Exercise 11\PSO\Debug\PSO.exe
