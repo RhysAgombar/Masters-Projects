@@ -1,0 +1,9 @@
+apple
+carrot
+cauliflower
+eggs
+groundmeat
+meat
+onion
+potato
+sweetpotato

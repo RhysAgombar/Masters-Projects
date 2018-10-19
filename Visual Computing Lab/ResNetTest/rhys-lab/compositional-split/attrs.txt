@@ -1,0 +1,12 @@
+peeled
+sliced
+whole
+seasoned
+chopped
+mashed
+beaten
+unbeaten
+raw
+shredded
+mashed
+

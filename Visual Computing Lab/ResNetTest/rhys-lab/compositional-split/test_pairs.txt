@@ -1,0 +1,8 @@
+raw groundmeat
+cooked meat
+sliced sweetpotato
+sliced apple
+sliced potato 
+mashed potato 
+whole onion 
+whole carrot 

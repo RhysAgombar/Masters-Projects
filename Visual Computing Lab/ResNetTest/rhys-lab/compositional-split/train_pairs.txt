@@ -1,0 +1,18 @@
+peeled apple 
+whole apple 
+whole cauliflower 
+whole potato 
+whole sweetpotato
+seasoned carrot 
+sliced carrot 
+sliced meat 
+sliced onion 
+chopped cauliflower 
+mashed cauliflower 
+beaten eggs 
+unbeaten eggs 
+cooked groundmeat 
+raw meat 
+shredded meat 
+
+

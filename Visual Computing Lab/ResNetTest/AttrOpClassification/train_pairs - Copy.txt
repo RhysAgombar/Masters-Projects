@@ -1,0 +1,14 @@
+Seasoned Carrot
+Seasoned Meat
+Seasoned Potato
+Sliced Apple
+Sliced Carrot
+Sliced Meat
+Sliced Onion
+Sliced Potato
+Whole Apple
+Whole Carrot
+Whole Cauliflower
+Whole Eggs
+Whole Meat
+Whole Potato
