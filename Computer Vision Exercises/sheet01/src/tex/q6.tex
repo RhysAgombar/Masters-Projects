@@ -1,0 +1,40 @@
+\section*{Question 6}
+\noindent
+The Fourier Transform of a gaussian is another gaussian:
+\begin{equation}
+ FT(G(x,\sigma) = \frac{\sqrt{2\pi}}{\sigma} G(w, \sigma^{-1})
+\end{equation}
+
+A convoltion in the space domain is a multiplication is the frequency one:
+
+\begin{equation}
+G(x,\sigma)*G(x,\sigma) =  \left( \frac{\sqrt{2\pi}}{\sigma} G(w, \sigma^{-1}) \right)  ^2
+\end{equation}
+
+Therefore, two convolutions with the standard deviation $\sigma$ is equivalent to a convolution of standard deviation $\sigma'$:
+
+\begin{equation}
+ \frac{\cancel{2\pi}}{\cancel{\sigma^2}} \left( \frac{1}{\cancel{2\pi\sigma^{-2}}} e^{\frac{-x^2}{\sigma^{-2}}}  \right) =  \frac{\sqrt{2\pi}}{\sigma'} G(w, {\sigma'}^{-1})
+\end{equation}
+
+\begin{equation}
+ e^{\frac{-x^2}{\sigma^{-2}}} = \frac{\cancel{\sqrt{2\pi}}}{\cancel{\sigma'}} \frac{1}{\cancel{\sqrt{2\pi}}\cancel{{\sigma'}^{-1}}} e^{\frac{-x^2}{2({\sigma'}^{-1})^2}}
+\end{equation}
+
+\begin{equation}
+ e^{\frac{-x^2}{\sigma^{-2}}} = e^{\frac{-x^2}{2 (   {{\sigma'}^{-1}  })^2     }}
+\end{equation}
+
+\begin{equation}
+ \sigma^{-2} = 2 ({\sigma'}^{-1})^2
+\end{equation}
+
+\begin{equation}
+ \sigma^{-1} = \sqrt{2} {\sigma'}^{-1}
+\end{equation}
+
+\begin{equation}
+ \sigma\sqrt{2} = \sigma'
+\end{equation}
+
+So, applying two convolutions with std. dev of $\sigma$ is the same as applying once with $\sigma\sqrt{2}$

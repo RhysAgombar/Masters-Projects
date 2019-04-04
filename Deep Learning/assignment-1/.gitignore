@@ -1,0 +1,6 @@
+**/__pycache__
+.vscode/
+*.gz
+*.pdf
+t10k*
+train*

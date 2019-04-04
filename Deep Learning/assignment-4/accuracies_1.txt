@@ -1,0 +1,9 @@
+Without Dropout Layer:
+lr:1e-6  acc: 0.23125
+lr:1e-5  acc: 0.43750
+lr:1e-4  acc: 0.58750
+lr:1e-3  acc: 0.14375
+lr:1e-2  acc: 0.38125
+
+With Dropout Layer:
+lr:1e-4  acc: 0.93125

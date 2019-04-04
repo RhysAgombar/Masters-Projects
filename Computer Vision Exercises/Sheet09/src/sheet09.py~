@@ -1,0 +1,174 @@
+import cv2
+import numpy as np
+import random
+
+#   =======================================================
+#                   Task1
+#   =======================================================
+def task1()
+    img1 = cv2.imread('../images/building.jpeg', cv2.IMREAD_GRAYSCALE)
+    img1Color = cv2.imread('../images/building.jpeg')
+    cv2.imshow("image", img1)
+
+    #apply gaussian filter
+    img1 =  cv2.GaussianBlur(img1, (3, 3), 0)
+
+    # compute structural tensor
+    I_x = cv2.Sobel(img1,cv2.CV_64F,1,0,ksize=3)
+    I_y = cv2.Sobel(img1,cv2.CV_64F,0,1,ksize=3)
+    cv2.imshow("sobelx", I_x)
+    I_xy = I_x * I_y
+    I_xx = I_x * I_x
+    I_yy = I_y * I_y
+    print()
+    normI = np.log(np.abs(I_xy))
+    normI = (normI / np.max(normI))*255
+
+
+
+    cv2.imshow("Ixy log",normI.astype(np.uint8))
+
+
+    box = np.ones((3,3))
+    box /= 9.0
+    C_xx = cv2.filter2D(I_xx,-1,box)
+    C_xy = cv2.filter2D(I_xy,-1,box)
+    C_yy = cv2.filter2D(I_yy,-1,box)
+
+    assert(img1.shape == C_xx.shape)
+    M = lambda posY,posX : np.array([[C_xx[posY][posX], C_xy[posY][posX]],[C_xy[posY][posX], C_yy[posY][posX]]])
+    k = 0.09
+    F = lambda M: max(np.abs(np.linalg.det(M)) - k*(np.trace(M)**2),0)
+    print(img1.shape)
+
+
+    #Harris Corner Detection
+
+    fitness = np.zeros(img1.shape)
+    for i in range(img1.shape[0]):
+        for j in range(img1.shape[1]):
+            fitness[i,j] = F(M(i,j))
+    ##visualization response function
+    respFuncVis = np.log(fitness)
+    respFuncVis = (respFuncVis / np.max(respFuncVis))*255
+    cv2.imshow("response function (log)", respFuncVis.astype(np.uint8))
+
+    ##thresholding
+    threshold = 6000000
+    filtered = fitness.copy()
+    filtered[np.where(filtered < threshold)] = 0
+
+    fit = np.log(filtered)
+
+    fit = (fit / np.max(fit))*255
+    cv2.imshow("response function thresholded(log)", fit.astype(np.uint8))
+
+
+    ###filtering. keeping only local maxima
+    for i in range(img1.shape[0]):
+        i_lw_b = max(0,i-1)
+        i_up_b = min(img1.shape[0], i+2)
+        for j in range(img1.shape[1]):
+            j_lw_b = max(0, j - 1)
+            j_up_b = min(img1.shape[1], j + 2)
+
+            mx = np.max(filtered[i_lw_b:i_up_b,j_lw_b:j_up_b])
+            if(filtered[i,j] != mx):
+                filtered[i,j] = 0
+
+    maxima = filtered.copy()
+    maxima = np.log(maxima)
+    maxima = (maxima / np.max(maxima))*255
+    cv2.imshow("corners (log)", maxima.astype(np.uint8))
+
+    corners_H = img1Color.copy()
+    corners_H[np.where(filtered>0)] = np.array([0,0,255])
+    cv2.imshow("Harris corners", corners_H)
+
+
+    #Forstner Corner Detection
+    w_min = 500.0
+    q_min = 0.85
+
+
+    ##small noise to prevent div by zero
+    epsilon =0.0001
+    W = np.zeros(img1.shape)
+    Q = np.zeros(img1.shape)
+    for i in range(img1.shape[0]):
+        for j in range(img1.shape[1]):
+            m = M(i,j)
+            detM = np.linalg.det(m)
+            Tm = np.trace(m) + epsilon
+            assert(Tm != 0 )
+            W[i,j] = detM/Tm
+            assert( not np.isnan(W[i,j]))
+            Q[i,j] = (4*detM)/ Tm**2
+
+
+
+    ##thresholding
+    W[np.where(W<w_min)] = 0
+    Q[np.where(Q<q_min)] = 0
+
+
+    wshow = W.copy()
+    #wshow = np.log(wshow)
+    wshow = (wshow / np.max(wshow))*255
+    cv2.imshow("W", wshow.astype(np.uint8))
+    qshow = Q.copy()
+
+    #qshow = np.log(qshow)
+    qshow = (qshow / np.max(qshow))*255
+    cv2.imshow("Q", qshow.astype(np.uint8))
+
+    corners_F_mask = Q*W
+    corners_F = img1Color.copy()
+
+    corners_F[np.where(corners_F_mask>0)] = np.array([0,0,255])
+    cv2.imshow("Foerstner corners ", corners_F)
+    cv2.waitKey(0)
+
+
+
+#   =======================================================
+#                   Task2
+#   =======================================================
+def task2():
+    img1 = cv2.imread('../images/mountain1.png')
+    img2 = cv2.imread('../images/mountain2.png')
+
+    #extract sift keypoints and descriptors
+
+    # own implementation of matching
+
+    img3 = cv2.drawMatchesKnn(img1, kp1, img2, kp2, good_matches, None, flags=2)
+
+    # display matched keypoints
+
+    #  =======================================================
+    #                          Task-3
+    #  =======================================================
+
+    nSamples = 4;
+    nIterations = 20;
+    thresh = 0.1;
+    minSamples = 4;
+
+    #  /// RANSAC loop
+    for i in range(nIterations):
+
+        print('iteration '+str(i))
+
+        #randomly select 4 pairs of keypoints
+
+        #compute transofrmation and warp img2 using it
+
+        #count inliers and keep transformation if it is better than the best so far
+
+    #apply best transformation to transform img2
+
+    #display stitched images
+
+task1()
+task2()

@@ -1,0 +1,8 @@
+Group Members:
+Rhys Agombar
+Thiago Bell Felix de Oliveira
+
+Notes:
+Our implementation is not working properly. We did not manage to implement the
+multivariate gaussian function in time. Since the covariance matrices
+are singular, the functions would fall in the degenerate case complicating things. So we used one implemented in scipy (we have no expectations about getting points for it)
